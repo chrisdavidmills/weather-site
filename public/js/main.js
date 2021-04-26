@@ -1,5 +1,3 @@
-console.log('JS is loaded');
-
 // BASIC TEST FETCH
 // const url = 'http://puzzle.mead.io/puzzle';
 //
