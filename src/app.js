@@ -7,6 +7,11 @@ const geocode = require('./utils/geocode');
 
 const app = express();
 
+// set port to use for starting the app up. process.env.PORT is for the app when it is on heroku. Heroku sets this.
+// The hardcoded 7991 value is for when we are testing it locally
+// Heroku will use the npm run start command to run the app
+const port = process.env.PORT || 7991;
+
 // Modify settings for Express apps using app.set()
 // In this case we are setting handlebars/hbs as the view engine
 // NOTE: nodemon does not refresh after .hbs file changes by default; to make it happen you can do "nodemon app -e hbs,js"
@@ -117,7 +122,8 @@ app.get('*', (req, res) => {
 });
 
 // start the server
+// Note how we are using the port variable here, which works locally or on heroku
 
-app.listen(7991, () => {
+app.listen(port, () => {
   console.log('Server running at port 7991.');
 });
