@@ -73,3 +73,15 @@ button:hover, button:focus  {
 button:active  {
   background: #999999;
 }
+
+dd {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+dd img {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}

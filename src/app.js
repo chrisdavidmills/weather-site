@@ -87,7 +87,7 @@ app.get('/weather', (req, res) => {
       return res.send({error});
     }
 
-    forecast(lat, long, (error, {temperature, description} = {}) => {
+    forecast(lat, long, (error, {temperature, description, icon, wind_speed, wind_direction} = {}) => {
       if(error) {
         return res.send({error});
       }
@@ -95,7 +95,10 @@ app.get('/weather', (req, res) => {
       res.send({
         location,
         temperature,
-        description
+        description,
+        icon,
+        wind_speed,
+        wind_direction
       });
     });
   });

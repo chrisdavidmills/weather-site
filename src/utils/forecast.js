@@ -15,7 +15,10 @@ function forecast(lat, long, callback) {
     } else {
       callback(undefined, {
         temperature: body.current.temperature,
-        description: body.current.weather_descriptions[0].toLowerCase()
+        description: body.current.weather_descriptions[0].toLowerCase(),
+        icon: body.current.weather_icons[0],
+        wind_speed: body.current.wind_speed,
+        wind_direction: body.current.wind_dir
       });
     }
   })

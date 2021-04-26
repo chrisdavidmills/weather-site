@@ -24,19 +24,26 @@ function fetchForecast() {
 
   fetch(url)
   .then(response => response.json())
-  .then(({error,location,temperature,description} = {}) => {
+  .then(({error, location, temperature, description, icon, wind_speed, wind_direction} = {}) => {
     if(error) {
       results.removeChild(locationResult);
       return alert(`Error: ${error}`);
     }
 
     const descriptionResult = document.createElement('dd');
+    const descriptionPara = document.createElement('p');
+    const descriptionImg = document.createElement('img');
 
     locationResult.textContent = `The weather for ${ location }`;
-    descriptionResult.textContent = `The temperature is ${ temperature }°C. It is ${ description }.`;
+
+    descriptionPara.textContent = `The temperature is ${ temperature }°C. It is ${ description }, with a ${ wind_direction } wind of ${ wind_speed }mph.`;
+    descriptionImg.src = icon;
+    descriptionImg.alt = `${ description } icon`;
 
 
     results.appendChild(descriptionResult);
+    descriptionResult.appendChild(descriptionImg);
+    descriptionResult.appendChild(descriptionPara);
 
     searchInput.value = '';
   })
