@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en-US">
+
+<head>
+  {{>meta}}
+  <script src="/js/main.js" async></script>
+</head>
+
+<body>
+  {{>header}}
+
+  <p id="search-label">Enter a location to return the weather forecast for it.</p>
+
+  <form>
+    <input type="search" id="search" name="address" aria-labelledby="search-label">
+    <button>Show Forecast</button>
+  </form>
+
+  <dl class="results">
+  </dl>
+
+  {{>footer}}
+</body>
+
+</html>

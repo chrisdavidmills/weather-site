@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  {{>meta}}
+  <!-- NOTE: using dot at start of relative paths caused static resources to fail to load, only at the route /help/* -->
+</head>
+
+<body>
+  {{>header}}
+  <p>{{errorMsg}}</p>
+  {{>footer}}
+</body>
+
+</html>
